@@ -1,0 +1,494 @@
+/* ===========================
+  共通リセット & 基本設定
+=========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Helvetica Neue', sans-serif;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* ===========================
+  背景スライダー & オーバーレイ
+=========================== */
+.background-slider {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+.background-slider img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.background-slider img.active {
+  opacity: 1;
+}
+.slide-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+/* ===========================
+  レイアウト共通
+=========================== */
+.container {
+  position: relative;
+  z-index: 1;
+  padding: 5vh 10vw;
+  text-align: center;
+}
+main.container {
+  margin-top: 140px;
+  margin-bottom: 100px;
+  padding: 20px;
+  color: #f1f8f3;
+  text-align: center;
+}
+h1, h2 {
+  margin-bottom: 1em;
+}
+p {
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto 2em;
+}
+
+/* ===========================
+  ヘッダー・フッター
+=========================== */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.85);
+  z-index: 1000;
+}
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+.bottom-bar nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px 0;
+}
+.bottom-bar nav a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 10px 20px;
+  text-align: center;
+  z-index: 1000;
+}
+.footer-links img {
+  height: 24px;
+  margin: 0 10px;
+}
+.legal a {
+  margin: 0 10px;
+  font-size: 12px;
+  color: #666;
+  text-decoration: none;
+}
+
+/* ===========================
+  TOPページ
+=========================== */
+.top-vision {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 220px);
+  text-align: center;
+  color: #dcebd5;
+}
+.brand-name {
+  font-size: 6rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+.vision-text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+}
+
+/* ===========================
+  ABOUTページ
+=========================== */
+.about-section {
+  padding: 80px 20px;
+}
+.about-block {
+  padding: 60px 40px;
+  margin-bottom: 60px;
+  border-radius: 20px;
+  max-width: 1000px;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #fff;
+  text-align: center;
+}
+.about-point {
+  margin-bottom: 40px;
+}
+.point-title {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.point-title.green { color: #a5d6a7; }
+.point-title.purple { color: #ce93d8; }
+.point-title.yellow { color: #fff59d; }
+
+.about-point ul {
+  padding-left: 1.5em;
+}
+.about-point li {
+  margin-bottom: 10px;
+  line-height: 1.7;
+}
+.about-block p {
+  font-size: 1.1rem;
+  line-height: 1.9;
+}
+
+/* ===========================
+  PRODUCTSページ
+=========================== */
+.products-section {
+  padding: 60px 5vw;
+  background: rgba(255, 255, 255, 0.4);
+}
+.product-columns {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: flex-start;
+}
+.product-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.product-block {
+  background: rgba(255, 255, 255, 0.92);
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  text-align: center;
+}
+.product-block img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+.product-block h2 {
+  font-size: 1.2rem;
+  margin-top: 1em;
+  color: #333;
+}
+.product-block h3 {
+  font-size: 1rem;
+  color: #666;
+}
+.product-block .catchcopy {
+  font-weight: bold;
+  margin: 1em 0 0.5em;
+  color: #444;
+}
+.product-block .description {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* ===========================
+  SUPPORTページ
+=========================== */
+.section {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 4rem 2rem;
+  margin: 8rem auto 4rem auto;
+  border-radius: 1rem;
+  max-width: 1000px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #333;
+  text-align: center;
+}
+
+/* 製品の使い方 */
+.product-guide {
+  background: #fdfdfd;
+  border-left: 6px solid #d7c0ff;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+}
+.product-guide h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: #5a3e8b;
+}
+.product-guide p {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.product-guide ol {
+  margin-left: 1.2rem;
+  padding-left: 1rem;
+  color: #444;
+}
+.product-guide li {
+  margin-bottom: 0.4rem;
+}
+
+/* FAQ */
+.faq {
+  margin-top: 4rem;
+}
+.faq-item {
+  background-color: #f7f7f7;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #a391e3;
+}
+.faq-item h4 {
+  font-size: 1.2rem;
+  color: #4c3c7a;
+  margin-bottom: 0.5rem;
+}
+.faq-item p {
+  color: #333;
+  line-height: 1.6;
+}
+
+/* お問い合わせフォーム */
+.contact-form {
+  margin-top: 4rem;
+}
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.contact-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  color: #333;
+}
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  padding: 0.7rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.4rem;
+  margin-top: 0.3rem;
+}
+.contact-form button {
+  padding: 0.8rem;
+  font-size: 1rem;
+  background-color: #6a4fb6;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.contact-form button:hover {
+  background-color: #563d99;
+}
+
+/* ===========================
+  SHOPページ
+=========================== */
+.shop-container {
+  padding: 100px 5vw;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(4px);
+  min-height: 100vh;
+}
+.shop-container h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #333;
+}
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
+.product-grid .product-block {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 24px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+.product-grid .product-block img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+.product-grid .product-block h2 {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+  color: #444;
+}
+.product-grid .product-block p {
+  font-size: 1rem;
+  color: #6a4fb6;
+  margin-bottom: 1rem;
+}
+.buy-button {
+  display: inline-block;
+  padding: 0.6rem 1.5rem;
+  background-color: #6a4fb6;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+.buy-button:hover {
+  background-color: #563d99;
+}
+
+
+/* ===========================
+  モバイル対応（スマホ用）
+=========================== */
+@media screen and (max-width: 768px) {
+  .top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .bottom-bar nav {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 5px 10px;
+  }
+
+  .brand-name {
+    font-size: 3rem;
+  }
+
+  .vision-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+
+  .about-block {
+    padding: 30px 20px;
+    margin-bottom: 40px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .point-title {
+    font-size: 1.2rem;
+  }
+
+  .product-columns {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .product-block {
+    padding: 16px;
+  }
+
+  .product-block h2 {
+    font-size: 1rem;
+  }
+
+  .product-block .description {
+    font-size: 0.9rem;
+  }
+
+  .section {
+    padding: 2rem 1rem;
+    margin: 6rem auto 2rem auto;
+  }
+
+  .contact-form form {
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .shop-container {
+    padding: 80px 5vw;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-links img {
+    margin: 5px;
+  }
+
+  .legal a {
+    display: inline-block;
+    margin: 5px 8px;
+  }
+}
+
+
